@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', function(){
         var scene = new BABYLON.Scene(engine);
 
         //Skybox
-        var skybox = BABYLON.Mesh.CreateBox("skyBox", 100.0, scene);
+        var skybox = BABYLON.Mesh.CreateBox("skyBox", 5000.0, scene);
         var skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
         skyboxMaterial.backFaceCulling = false;
         skyboxMaterial.disableLighting = true;
@@ -29,9 +29,25 @@ window.addEventListener('DOMContentLoaded', function(){
         //Earth
         var earth = BABYLON.Mesh.CreateSphere("earth", 100, 10, scene);
         var earthMaterial = new BABYLON.StandardMaterial("earthMaterial", scene);
-        earthMaterial.diffuseTexture = new BABYLON.Texture("textures/earth1.jpg", scene);
+        earthMaterial.diffuseTexture = new BABYLON.Texture("textures/earth.jpg", scene);
         earthMaterial.specularColor = new BABYLON.Color3(0,0,0);
         earth.material = earthMaterial;
+
+        //Moon
+        var moon = BABYLON.Mesh.CreateSphere("moon", 100, 2, scene);
+        moon.position = new BABYLON.Vector3(-5, 6, 0);
+        var moonMaterial = new BABYLON.StandardMaterial("moonMaterial", scene);
+        moonMaterial.diffuseTexture = new BABYLON.Texture("textures/moon.jpg", scene);
+        moon.material = moonMaterial;
+
+        //Mercury
+        var mercury = BABYLON.Mesh.CreateSphere("mercury", 100, 5, scene);
+        mercury.position = new BABYLON.Vector3(-80, -15, 300);
+        var mercuryMaterial = new BABYLON.StandardMaterial("mercuryMaterial", scene);
+        mercuryMaterial.diffuseTexture = new BABYLON.Texture("textures/mercury.jpg", scene);
+        mercury.material = mercuryMaterial;
+
+        
 
         //Light
         var light = new BABYLON.SpotLight("spotLight", new BABYLON.Vector3(9.78,-13.022,36.5), new BABYLON.Vector3(-9.78,+13.022,-36.5), BABYLON.Tools.ToRadians(180), 0.01, scene);
