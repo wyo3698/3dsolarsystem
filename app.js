@@ -60,7 +60,7 @@ window.addEventListener('DOMContentLoaded', function(){
         // var box2 = BABYLON.Mesh.CreateBox("Box2",4.0,scene);
         
         //Camera
-        var camera = new BABYLON.ArcRotateCamera('arcCamera', BABYLON.Tools.ToRadians(0), BABYLON.Tools.ToRadians(0), 40.0, earth.position, scene);
+        var camera = new BABYLON.ArcRotateCamera('arcCamera', BABYLON.Tools.ToRadians(-80), BABYLON.Tools.ToRadians(65), 40.0, earth.position, scene);
         camera.attachControl(canvas, true);
         camera.keysUp.push(87);
         camera.keysDown.push(83);
