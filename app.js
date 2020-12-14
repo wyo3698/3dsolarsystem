@@ -29,6 +29,7 @@ window.addEventListener('DOMContentLoaded', function(){
         //Earth
         var earth = BABYLON.Mesh.CreateSphere("earth", 100, 10, scene);
         var earthMaterial = new BABYLON.StandardMaterial("earthMaterial", scene);
+        earth.rotation.x = BABYLON.Tools.ToRadians(23.5);
         earthMaterial.diffuseTexture = new BABYLON.Texture("textures/earth.jpg", scene);
         earthMaterial.specularColor = new BABYLON.Color3(0,0,0);
         earth.material = earthMaterial;
@@ -42,12 +43,68 @@ window.addEventListener('DOMContentLoaded', function(){
 
         //Mercury
         var mercury = BABYLON.Mesh.CreateSphere("mercury", 100, 5, scene);
-        mercury.position = new BABYLON.Vector3(-80, -15, 300);
+        mercury.position = new BABYLON.Vector3(-80, -50, 300);
+        mercury.rotation.x = BABYLON.Tools.ToRadians(2);
         var mercuryMaterial = new BABYLON.StandardMaterial("mercuryMaterial", scene);
         mercuryMaterial.diffuseTexture = new BABYLON.Texture("textures/mercury.jpg", scene);
         mercury.material = mercuryMaterial;
 
-        
+        //Venus
+        var venus = BABYLON.Mesh.CreateSphere("venus", 100, 7, scene);
+        venus.position = new BABYLON.Vector3(180, -50, 150);
+        venus.rotation.x = BABYLON.Tools.ToRadians(3);
+        var venusMaterial = new BABYLON.StandardMaterial("venusMaterial", scene);
+        venusMaterial.diffuseTexture = new BABYLON.Texture("textures/venus.jpg", scene);
+        venus.material = venusMaterial;
+
+        //Mars
+        var mars = BABYLON.Mesh.CreateSphere("mars", 100, 5, scene);
+        mars.position = new BABYLON.Vector3(250, -50, -150);
+        mars.rotation.x = BABYLON.Tools.ToRadians(25.19);
+        var marsMaterial = new BABYLON.StandardMaterial("marsMaterial", scene);
+        marsMaterial.diffuseTexture = new BABYLON.Texture("textures/mars.jpg", scene);
+        mars.material = marsMaterial;
+
+        //Jupiter
+        var jupiter = BABYLON.Mesh.CreateSphere("jupiter", 100, 35, scene);
+        jupiter.position = new BABYLON.Vector3(-300, -50, -400);
+        jupiter.rotation.x = BABYLON.Tools.ToRadians(3);
+        var jupiterMaterial = new BABYLON.StandardMaterial("jupiterMaterial", scene);
+        jupiterMaterial.diffuseTexture = new BABYLON.Texture("textures/jupiter.jpg", scene);
+        jupiter.material = jupiterMaterial;
+
+        //Saturn
+        var saturn = BABYLON.Mesh.CreateSphere("saturn", 100, 30, scene);
+        saturn.position = new BABYLON.Vector3(500, -50, 0);
+        saturn.rotation.x = BABYLON.Tools.ToRadians(27);
+        var saturnMaterial = new BABYLON.StandardMaterial("saturnMaterial", scene);
+        saturnMaterial.diffuseTexture = new BABYLON.Texture("textures/saturn.jpg", scene);
+        saturn.material = saturnMaterial;
+
+        //Saturn Ring
+        var saturnring = BABYLON.MeshBuilder.CreateTorus("saturnring", {thickness: 8, diameter: 65}, scene);
+        saturnring.position = saturn.position;
+        saturnring.rotation.x = BABYLON.Tools.ToRadians(27);
+        saturnring.scaling = new BABYLON.Vector3(1, 0.001, 1);
+        var saturnringMaterial = new BABYLON.StandardMaterial("saturnringMaterial", scene);
+        saturnringMaterial.diffuseTexture = new BABYLON.Texture("textures/saturnring.jpg", scene);
+        saturnring.material = saturnringMaterial;
+
+        //Uranus
+        var uranus = BABYLON.Mesh.CreateSphere("uranus", 100, 15, scene);
+        uranus.position = new BABYLON.Vector3(-500, -50, -45);
+        uranus.rotation.x = BABYLON.Tools.ToRadians(98);
+        var uranusMaterial = new BABYLON.StandardMaterial("uranusMaterial", scene);
+        uranusMaterial.diffuseTexture = new BABYLON.Texture("textures/uranus.jpg", scene);
+        uranus.material = uranusMaterial;
+
+        //Neptune
+        var neptune = BABYLON.Mesh.CreateSphere("neptune", 100, 15, scene);
+        neptune.position = new BABYLON.Vector3(-50, -50, -550);
+        neptune.rotation.x = BABYLON.Tools.ToRadians(28.5);
+        var neptuneMaterial = new BABYLON.StandardMaterial("neptuneMaterial", scene);
+        neptuneMaterial.diffuseTexture = new BABYLON.Texture("textures/neptune.jpg", scene);
+        neptune.material = neptuneMaterial;
 
         //Light
         var light = new BABYLON.SpotLight("spotLight", new BABYLON.Vector3(9.78,-13.022,36.5), new BABYLON.Vector3(-9.78,+13.022,-36.5), BABYLON.Tools.ToRadians(180), 0.01, scene);
@@ -62,19 +119,6 @@ window.addEventListener('DOMContentLoaded', function(){
         var light3 = new BABYLON.SpotLight("spotLight1", new BABYLON.Vector3(-11.29,15.04,-31.6), new BABYLON.Vector3(11.29,-15.04,31.6), BABYLON.Tools.ToRadians(270), 0.1, scene);
         light3.intensity = 0.1;
 
-        
-        
-        
-
-        // var mat = new BABYLON.StandardMaterial("", scene);
-
-
-
-        // var boxcolor = new BABYLON.Color4(1,1,1,1);
-
-        // var box = BABYLON.MeshBuilder.CreateTiledBox("Box",{height:0.5, width:10.0, depth: 10.0, faceColors: boxcolor},scene);
-        // var box2 = BABYLON.Mesh.CreateBox("Box2",4.0,scene);
-        
         //Camera
         var camera = new BABYLON.ArcRotateCamera('arcCamera', BABYLON.Tools.ToRadians(-80), BABYLON.Tools.ToRadians(65), 40.0, earth.position, scene);
         camera.attachControl(canvas, true);
@@ -84,45 +128,11 @@ window.addEventListener('DOMContentLoaded', function(){
         camera.keysRight.push(68);
         camera.upperRadiusLimit = 50;
         camera.lowerRadiusLimit = 10;
-        
-        // var light = new BABYLON.PointLight("pointLight", new BABYLON.Vector3(0,10,0), scene);
-        // light.parent = camera;
-        // light.diffuse = new BABYLON.Color3(1,1,1);
-
-        // scene.actionManager = new BABYLON.ActionManager(scene);
-        // scene.actionManager.registerAction(
-        //     new BABYLON.ExecuteCodeAction({
-        //         trigger: BABYLON.ActionManager.OnKeyUpTrigger, parameter: " "},
-        //     function(){
-        //         light.setEnabled(!light.isEnabled());
-        //     }));
-
-        // var light = new BABYLON.SpotLight("spotLight", new BABYLON.Vector3(0,10,0), new BABYLON.Vector3(0,-1,0), BABYLON.Tools.ToRadians(45), 0.1, scene);
-
-
-        // var material = new BABYLON.StandardMaterial("material1", scene);
-        // this.material.diffuseTexture = new BABYLON.Texture("textures/earth.jpg", scene);
-        // material.wireframe = true;
-        // material.diffuseColor = BABYLON.Color3.Blue();
-        // material.emissiveColor = BABYLON.Color3.Red();
-        // material.specularColor = BABYLON.Color3.Red();
-        // material.alpha = 0.9;
-        // world.material = material;
 
         return scene;
     }
     var scene = createScene();
     engine.runRenderLoop(function(){
-        // var light = scene.getLightByName("pointLight");
-        // light.diffuse.g += 0.01;
-        // light.diffuse.b += 0.01;
-        // var light = scene.getLightByName("spotLight");
-        // light.position.y -= 0.01;
-        // var material = scene.getMeshByName("Box").material;
-        // material.alpha -= 0.01;
-        // if (material.alpha <=0) {
-        //     material.alpha = 1;
-        // }
         scene.render();
     });
 });
