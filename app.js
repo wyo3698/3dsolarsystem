@@ -39,6 +39,7 @@ window.addEventListener('DOMContentLoaded', function(){
         moon.position = new BABYLON.Vector3(-5, 6, 0);
         var moonMaterial = new BABYLON.StandardMaterial("moonMaterial", scene);
         moonMaterial.diffuseTexture = new BABYLON.Texture("textures/moon.jpg", scene);
+        moonMaterial.specularColor = new BABYLON.Color3(0,0,0);
         moon.material = moonMaterial;
 
         //Mercury
@@ -47,6 +48,7 @@ window.addEventListener('DOMContentLoaded', function(){
         mercury.rotation.x = BABYLON.Tools.ToRadians(2);
         var mercuryMaterial = new BABYLON.StandardMaterial("mercuryMaterial", scene);
         mercuryMaterial.diffuseTexture = new BABYLON.Texture("textures/mercury.jpg", scene);
+        mercuryMaterial.specularColor = new BABYLON.Color3(0,0,0);
         mercury.material = mercuryMaterial;
 
         //Venus
@@ -55,6 +57,7 @@ window.addEventListener('DOMContentLoaded', function(){
         venus.rotation.x = BABYLON.Tools.ToRadians(3);
         var venusMaterial = new BABYLON.StandardMaterial("venusMaterial", scene);
         venusMaterial.diffuseTexture = new BABYLON.Texture("textures/venus.jpg", scene);
+        venusMaterial.specularColor = new BABYLON.Color3(0,0,0);
         venus.material = venusMaterial;
 
         //Mars
@@ -63,6 +66,7 @@ window.addEventListener('DOMContentLoaded', function(){
         mars.rotation.x = BABYLON.Tools.ToRadians(25.19);
         var marsMaterial = new BABYLON.StandardMaterial("marsMaterial", scene);
         marsMaterial.diffuseTexture = new BABYLON.Texture("textures/mars.jpg", scene);
+        marsMaterial.specularColor = new BABYLON.Color3(0,0,0);
         mars.material = marsMaterial;
 
         //Jupiter
@@ -71,6 +75,7 @@ window.addEventListener('DOMContentLoaded', function(){
         jupiter.rotation.x = BABYLON.Tools.ToRadians(3);
         var jupiterMaterial = new BABYLON.StandardMaterial("jupiterMaterial", scene);
         jupiterMaterial.diffuseTexture = new BABYLON.Texture("textures/jupiter.jpg", scene);
+        jupiterMaterial.specularColor = new BABYLON.Color3(0,0,0);
         jupiter.material = jupiterMaterial;
 
         //Saturn
@@ -79,6 +84,7 @@ window.addEventListener('DOMContentLoaded', function(){
         saturn.rotation.x = BABYLON.Tools.ToRadians(27);
         var saturnMaterial = new BABYLON.StandardMaterial("saturnMaterial", scene);
         saturnMaterial.diffuseTexture = new BABYLON.Texture("textures/saturn.jpg", scene);
+        saturnMaterial.specularColor = new BABYLON.Color3(0,0,0);
         saturn.material = saturnMaterial;
 
         //Saturn Ring
@@ -88,6 +94,7 @@ window.addEventListener('DOMContentLoaded', function(){
         saturnring.scaling = new BABYLON.Vector3(1, 0.001, 1);
         var saturnringMaterial = new BABYLON.StandardMaterial("saturnringMaterial", scene);
         saturnringMaterial.diffuseTexture = new BABYLON.Texture("textures/saturnring.jpg", scene);
+        saturnringMaterial.specularColor = new BABYLON.Color3(0,0,0);
         saturnring.material = saturnringMaterial;
 
         //Uranus
@@ -96,6 +103,7 @@ window.addEventListener('DOMContentLoaded', function(){
         uranus.rotation.x = BABYLON.Tools.ToRadians(98);
         var uranusMaterial = new BABYLON.StandardMaterial("uranusMaterial", scene);
         uranusMaterial.diffuseTexture = new BABYLON.Texture("textures/uranus.jpg", scene);
+        uranusMaterial.specularColor = new BABYLON.Color3(0,0,0);
         uranus.material = uranusMaterial;
 
         //Neptune
@@ -104,6 +112,7 @@ window.addEventListener('DOMContentLoaded', function(){
         neptune.rotation.x = BABYLON.Tools.ToRadians(28.5);
         var neptuneMaterial = new BABYLON.StandardMaterial("neptuneMaterial", scene);
         neptuneMaterial.diffuseTexture = new BABYLON.Texture("textures/neptune.jpg", scene);
+        neptuneMaterial.specularColor = new BABYLON.Color3(0,0,0);
         neptune.material = neptuneMaterial;
 
         //Light
