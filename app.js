@@ -24,8 +24,6 @@ window.addEventListener('DOMContentLoaded', function(){
         skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture.CreateFromImages(files, scene);
         skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
 
-        
-
         //Earth
         var earth = BABYLON.Mesh.CreateSphere("earth", 100, 10, scene);
         var earthMaterial = new BABYLON.StandardMaterial("earthMaterial", scene);
