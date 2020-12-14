@@ -29,7 +29,6 @@ window.addEventListener('DOMContentLoaded', function(){
         //Earth
         var earth = BABYLON.Mesh.CreateSphere("earth", 100, 10, scene);
         var earthMaterial = new BABYLON.StandardMaterial("earthMaterial", scene);
-        earth.rotation.x = BABYLON.Tools.ToRadians(23.5);
         earthMaterial.diffuseTexture = new BABYLON.Texture("textures/earth.jpg", scene);
         earthMaterial.specularColor = new BABYLON.Color3(0,0,0);
         earth.material = earthMaterial;
